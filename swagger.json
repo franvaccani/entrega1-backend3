@@ -1,0 +1,95 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Adoptme API",
+    "version": "1.0.0",
+    "description": "API para gestionar adopciones de mascotas y usuarios."
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": ["http"],
+  "paths": {
+    "/api/users": {
+      "get": {
+        "summary": "Obtener todos los usuarios",
+        "responses": {
+          "200": {
+            "description": "Lista de usuarios"
+          }
+        }
+      },
+      "post": {
+        "summary": "Crear nuevo usuario",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Usuario creado"
+          }
+        }
+      }
+    },
+    "/api/adoptions": {
+      "get": {
+        "summary": "Obtener todas las adopciones",
+        "responses": {
+          "200": {
+            "description": "Lista de adopciones"
+          }
+        }
+      },
+      "post": {
+        "summary": "Crear nueva adopción",
+        "parameters": [
+          {
+            "name": "adoption",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Adoption"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Adopción creada"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      },
+      "required": ["name", "email"]
+    },
+    "Adoption": {
+      "type": "object",
+      "properties": {
+        "petName": {
+          "type": "string"
+        },
+        "adopterName": {
+          "type": "string"
+        }
+      },
+      "required": ["petName", "adopterName"]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+
+
+# Node modules
+node_modules/
+
+# Entorno
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker
+*.tgz
+.dockerignore
+
+# VSCode settings
+.vscode/
+
+# Coverage y testing
+coverage/
+jest-test-results.json
