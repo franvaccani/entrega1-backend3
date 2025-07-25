@@ -19,7 +19,7 @@ npm install
 
 3. Configurar el archivo `.env` (ver `.env.example`):
 ```env
-MONGO_URL=mongodb+srv://usuario:pass@cluster.mongodb.net/adoptme
+MONGO_URL=mongodb+srv://franciscovaccani08:franDorrego11@cluster10.2oosqsz.mongodb.net/adoptme?retryWrites=true&w=majority&appName=Cluster10
 PORT=3000
 ```
 
